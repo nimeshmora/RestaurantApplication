@@ -133,5 +133,27 @@ namespace DineInApplication.service
 
         }
 
+
+        public static String provideFoodItemImagePath(int slectedItemId)
+        {
+
+            String item_image = "";
+            DBConnectionService connectionService = new DBConnectionService();
+            SqlConnection con = connectionService.getDbConnection();
+            con.Open();
+            SqlCommand cmd = new SqlCommand(SqlQueryHelper.getFoodItemImageQuery(), con);
+            cmd.Parameters.AddWithValue("@itemId", slectedItemId);
+            SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapt.Fill(dt);
+            con.Close();
+
+            foreach (DataRow r in dt.Rows)
+            {
+                item_image = r["item_image"].ToString();
+            }
+            return item_image;
+        }
+
     }
 }

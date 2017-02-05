@@ -11,29 +11,29 @@ namespace DineInApplication.service
 {
     class LoginService
     {
-        public String authenticateUser(String username , String password) {
+        private static int loggedInUserID = 0;
+
+        public static int getLoggedInUserID() {
+            return loggedInUserID;
+        }
+        public int authenticateUser(String username , String password) {
 
             DBConnectionService connectionService = new DBConnectionService();
             SqlConnection con = connectionService.getDbConnection();
             con.Open();
-            SqlCommand cmd = new SqlCommand(SqlQueryHelper.getLoginQuery() ,con);
+            SqlCommand cmd = new SqlCommand(SqlQueryHelper.getLoginUserIDQuery() ,con);
             cmd.Parameters.AddWithValue("@username",username);
             cmd.Parameters.AddWithValue("@password",password);
 
             try
             {
-                SqlDataAdapter adapt = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                adapt.Fill(dt);
-                con.Close();
-
-                String count = dt.Rows[0][0].ToString();
-                return count;
+                loggedInUserID = Convert.ToInt32(cmd.ExecuteScalar());
+                return loggedInUserID;
             }
             catch (Exception ex)
             {
 
-                return "";
+                return 0;
             }
 
         }

@@ -9,3 +9,4 @@ c:\users\nimesha jinarajadasa\documents\visual studio 2013\Projects\DineInApplic
 c:\users\nimesha jinarajadasa\documents\visual studio 2013\Projects\DineInApplication\DineInApplication\obj\Debug\DineInApplication.ui.Order.resources
 c:\users\nimesha jinarajadasa\documents\visual studio 2013\Projects\DineInApplication\DineInApplication\obj\Debug\DineInApplication.ui.Feedback.resources
 C:\Users\Nimesha Jinarajadasa\Documents\Visual Studio 2013\Projects\DineInApplication\DineInApplication\obj\Debug\DineInApplication.Login.resources
+C:\Users\Nimesha Jinarajadasa\Documents\Visual Studio 2013\Projects\DineInApplication\DineInApplication\obj\Debug\DineInApplication.ui.SalesAnalytics.resources

@@ -50,5 +50,23 @@ namespace DineInApplication.ui
             login.Show();
             this.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ui.Feedback newFeedBack = new ui.Feedback();
+            newFeedBack.StartPosition = FormStartPosition.Manual;
+            newFeedBack.Location = new Point(this.Location.X + (this.Width - newFeedBack.Width) / 2, this.Location.Y + (this.Height - newFeedBack.Height) / 2);
+            newFeedBack.Show();
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ui.SalesAnalytics newSalesAnalytics = new ui.SalesAnalytics();
+            newSalesAnalytics.StartPosition = FormStartPosition.Manual;
+            newSalesAnalytics.Location = new Point(this.Location.X + (this.Width - newSalesAnalytics.Width) / 2, this.Location.Y + (this.Height - newSalesAnalytics.Height) / 2);
+            newSalesAnalytics.Show();
+            this.Close();
+        }
     }
 }

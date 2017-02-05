@@ -27,8 +27,8 @@ namespace DineInApplication
             }
             else
             {
-                String rowCount = login.authenticateUser(username.Text, password.Text);
-                if (rowCount == "1")
+                int user_id = login.authenticateUser(username.Text, password.Text);
+                if (user_id != 0)
                 {
 
                     ui.MainMenu mainmenu = new ui.MainMenu();
